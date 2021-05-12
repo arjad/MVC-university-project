@@ -1,0 +1,65 @@
+@model IEnumerable<MvcApplication4.Models.contact1>
+
+@{
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+<div class="body7">
+    <section id="content">
+
+        <div class="pad1">
+            <h2>Add New Entry</h2>
+            <form id="ContactForm" action="/Home/Add" method="get">
+                <strong>Product   :</strong>
+                <div class="bg"><input style="border:1px solid black" type="text" name="name" class="input"></div>
+                <br><br>
+                <strong>Price  :</strong>
+                <div class="bg"><input style="border:1px solid black" type="text" name="price" class="input">	</div>
+                <br><br>
+                <strong>Brand  :</strong>
+                <div class="bg"><input style="border:1px solid black" type="text" name="brand" class="input"></div>
+                <br><br>
+                <strong>Description:</strong>
+                <div class="bg"><input style="border:1px solid black" type="text" name="desc" class="input">	</div>
+                <a href="#" class="button" onClick="document.getElementById('ContactForm').submit()"><button onclick="alert(`Data Added`)" style="margin-top:100px;margin-left: -2000px;background-color:orange; height: 30px; width: 90px; font-size: 25px">Add</button></a>
+
+            </form>
+        </div>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br>
+        <h2>All Details</h2>
+        <table style="table-layout: auto;border:1px solid grey; width: 90%;">
+            <tr style="background-color:orange; height:33px;border:1px solid grey;text-decoration:underline;font-weight:bold;font-size:15px">
+                <td>ID</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Brand</td>
+                <td>Description</td>
+                <td>Controls</td>
+
+            </tr>
+            @foreach (var s in Model)
+            {
+                <tr>
+                    <td>@s.Id</td>
+                    <td>@s.Name</td>
+                    <td>@s.PRICE</td>
+                    <td>@s.BRAND</td>
+                    <td>@s.DESC</td>
+
+                    <td>
+                        <a style="background-color:green;font-size:18px;padding-left:10px;padding-right:10px;color:white;margin-left:10px" href="/Home/Test/@s.Id">Edit</a>
+                        <a style="        background-color: red;        font-size: 18px;        padding-left: 10px;        padding-right: 10px;height: 20px; width: 60px;        color: white;        margin-left: 10px" href="/Home/Delete/@s.Id">Delete</a>
+                    </td>
+
+                </tr>
+            }
+        </table>
+
+
+
+
+    </section>
+</div>
+<!-- / content -->

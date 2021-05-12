@@ -1,0 +1,40 @@
+﻿@model MvcApplication4.Models.contact1
+@{
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+	<div class="body7">
+		<div class="main">
+			<section id="content">
+				
+				<div class="wrapper">
+					<article class="col2">
+						<div class="pad1">
+							<h2>Contact Details</h2>
+                            <form id="ContactForm" action="/Home/EditDone/@Model.Id" method="get">
+                                <strong>Name:</strong>
+                                <div class="bg"><input style="border:1px solid black" type="text" name="name" value=@Model.Name class="input"></div>
+                                <br>
+                                <br>
+                                <strong>Price:</strong>
+                                <div class="bg"><input style="border:1px solid black" type="text" name="price" value="@Model.PRICE" class="input">	</div>
+                                <br>
+                                <br>
+                                <strong>Brand:</strong>
+                                <div class="bg"><input style="border:1px solid black" type="text" name="brand" value=@Model.BRAND class="input"></div>
+                                <br>
+                                <br>
+                                <strong>Descp:</strong>
+                                <div class="bg"><input style="border:1px solid black" type="text" name="desc" value="@Model.DESC" class="input">	</div>
+
+                                <a href="#" class="button" onClick="document.getElementById('ContactForm').submit()"><button style="margin-top:100px;margin-left: 10px;background-color:orange; height: 37px; width: 110px; font-size: 25px">Update</button></a>
+                            </form>
+						</div>	
+                        <br>
+
+					</article>
+				</div>
+				
+			</section>
+		</div>
+	</div>
+<!-- / content -->
